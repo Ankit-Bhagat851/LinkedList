@@ -1,5 +1,5 @@
 Class Node: # Node Class
-  def __init__(delf,data): #defining a node class object
+  def __init__(self,data): #defining a node class object
     self.data=data #assigning data
     self.next=None #assigning next as null
 
