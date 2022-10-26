@@ -28,6 +28,30 @@ Class Singly LinkedList: # linked list class
     
   def deleteNode(data):
     
+  def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    result = temp = ListNode()
+    while list1 and list2:
+        if list1.val<list2.val:
+            temp.next = list1
+            list1 = list1.next
+        else:
+            temp.next = list2
+            list2 = list2.next
+        temp = temp.next
+
+    temp.next = list1 or list2
+
+    return result.next
+  def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    temp = None
+    while head:
+        nxt = head.next
+        head.next = temp #storing temp
+        temp = head #updating temp
+        #print('prev', temp, 'head', head)
+        head = nxt
+    return temp
+    
   
 if __name__=="main":
   print("Enter the number of function which you want to perform")
